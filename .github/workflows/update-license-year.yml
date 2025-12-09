@@ -13,11 +13,11 @@ jobs:
     permissions:
       contents: write # git push するために必要
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Generate GitHub App Token
         id: app_token
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@v2
         with:
           app-id: ${{ secrets.GHA_APP_ID }}
           private-key: ${{ secrets.GHA_APP_PRIVATE_KEY }}
